@@ -374,8 +374,8 @@ export async function render(host, ctx) {
   /* ----------------------------------------------------------------- pdf */
 
   async function loadPdf(url) {
-    const pdfjs = await import("../../vendor/pdfjs/pdf.min.mjs");
-    pdfjs.GlobalWorkerOptions.workerSrc = new URL("../../vendor/pdfjs/pdf.worker.min.mjs", import.meta.url).href;
+    const pdfjs = await import("../../vendor/pdfjs/pdf.min.js");
+    pdfjs.GlobalWorkerOptions.workerSrc = new URL("../../vendor/pdfjs/pdf.worker.min.js", import.meta.url).href;
     const headers = authHeaders();
     delete headers.Accept;
     const task = pdfjs.getDocument({
