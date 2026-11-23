@@ -110,21 +110,6 @@ function sourcesPanel(sources, scan) {
   return '<div class="source-list">' + sources.map((item) => sourceCard(item, scan)).join("") + "</div>";
 }
 
-function capabilitiesPanel(stats) {
-  const item = (label, ok) =>
-    '<div class="capability"><span>' + esc(label) + '</span><span class="' + (ok ? "ok" : "no") + '">' +
-    esc(ok ? t("admin.cap.available") : t("admin.cap.missing")) + "</span></div>";
-  return (
-    '<div class="panel"><h2 class="panel-title">' + esc(t("admin.capabilities")) + "</h2>" +
-    '<div class="capability-grid" style="margin-top:16px">' +
-    item(t("admin.cap.sevenzip"), stats.sevenzip) +
-    item(t("admin.cap.smb"), stats.smb) +
-    item(t("admin.cap.tiff"), stats.tiff) +
-    item(t("admin.cap.pdf"), true) +
-    "</div></div>"
-  );
-}
-
 function scanChip(scan) {
   if (!scan || !scan.state || !scan.state.running) return "";
   const state = scan.state;
@@ -322,8 +307,7 @@ function renderContent(host, ctx, sources, stats, scan) {
     head() + '<div class="stack">' + statCells(stats) +
     '<section><h2 class="section-title">' + esc(t("admin.sources")) +
     '<span class="count">' + esc(String(sources.length)) + "</span></h2>" +
-    sourcesPanel(sources, scan) + "</section>" +
-    capabilitiesPanel(stats) + "</div>";
+    sourcesPanel(sources, scan) + "</section></div>";
 
   const stateChip = host.querySelector("[data-scan-state]");
   if (stateChip) stateChip.innerHTML = scanChip(scan);

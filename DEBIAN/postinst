@@ -90,7 +90,7 @@ case "$1" in
         #    start covers a fresh install and an upgrade performed while the
         #    unit happened to be stopped. The end state is asserted.
         if [ -n "$2" ]; then
-            echo "Upgrading comicnest from version $2 to ${3:-1.0.009}"
+            echo "Upgrading comicnest from version $2 to ${3:-1.0.010}"
             systemctl try-restart "$SERVICE" 2>/dev/null || true
         fi
         if ! systemctl is-active --quiet "$SERVICE" 2>/dev/null; then

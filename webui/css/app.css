@@ -415,8 +415,6 @@ img { display: block; max-width: 100%; }
 .source-actions { display: flex; align-items: center; gap: 8px; }
 .capability-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
 .capability { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 14px; border-radius: var(--radius-sm); background: var(--surface-2); font-size: 13px; }
-.capability .ok { color: #4f8a63; }
-.capability .no { color: var(--danger); }
 
 /* ---------------------------------------------------------------- modal */
 
