@@ -14,7 +14,7 @@ that the TOS platform parser depends on:
   * the metadata files sit under ``usr/local/<appid>/`` inside ``data.tar``
 
 Usage:
-    python tools/inspect_deb.py dist/comicnest_1.0.008_x86_64.deb
+    python tools/inspect_deb.py dist/comicnest_1.0.009_x86_64.deb
 """
 
 import gzip
