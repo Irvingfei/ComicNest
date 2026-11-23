@@ -14,6 +14,11 @@ Type=simple
 User=comicnest
 Group=comicnest
 WorkingDirectory=/usr/local/comicnest
+# /var/api is a shared tmpfs directory that other apps may re-own between
+# starts. Without write access the server cannot create or replace its
+# socket, and a stale socket from a hard stop fails with EADDRINUSE.
+ExecStartPre=+/bin/sh -c 'mkdir -p /var/api && chmod 1777 /var/api && rm -f /var/api/comicnest.sock'
+ExecStopPost=+/bin/rm -f /var/api/comicnest.sock
 ExecStart=/usr/local/comicnest/bin/comicnest-server
 EnvironmentFile=-/usr/local/comicnest/comicnest.env
 TimeoutStartSec=30
