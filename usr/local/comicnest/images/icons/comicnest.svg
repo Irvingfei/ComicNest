@@ -1,37 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="ComicNest">
   <defs>
     <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#2a2925"/>
-      <stop offset="1" stop-color="#171613"/>
+      <stop offset="0" stop-color="#2b2a26"/>
+      <stop offset="1" stop-color="#161512"/>
     </linearGradient>
-    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#f8f4e9"/>
-      <stop offset="1" stop-color="#e8e1d1"/>
-    </linearGradient>
+    <pattern id="halftone" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="7" cy="7" r="4" fill="#e0835f" opacity="0.16"/>
+      <circle cx="22" cy="22" r="4" fill="#e0835f" opacity="0.16"/>
+    </pattern>
+    <clipPath id="tileClip">
+      <rect x="24" y="24" width="464" height="464" rx="112"/>
+    </clipPath>
   </defs>
 
   <!-- Rounded tile, with the launcher background left transparent. -->
   <rect x="24" y="24" width="464" height="464" rx="112" fill="url(#tile)"/>
+  <rect x="24" y="24" width="464" height="464" rx="112" fill="url(#halftone)" clip-path="url(#tileClip)"/>
   <rect x="26" y="26" width="460" height="460" rx="110" fill="none"
         stroke="#ffffff" stroke-opacity="0.08" stroke-width="4"/>
 
-  <!-- An open comic spread: cream page on the left, ink page on the right. -->
-  <path d="M96 146c42-18 92-18 152 6v230c-60-22-110-22-152-6z" fill="url(#paper)"/>
-  <path d="M416 146c-42-18-92-18-152 6v230c60-22 110-22 152-6z" fill="#20263a"/>
-  <path d="M264 152v230" fill="none" stroke="#0f1015" stroke-width="14" stroke-linecap="round"/>
+  <!-- Pop-art action rays behind the balloon. -->
+  <g stroke="#e0835f" stroke-width="16" stroke-linecap="round">
+    <path d="M412 128 452 92"/>
+    <path d="M418 178h44"/>
+    <path d="M386 92 402 52"/>
+  </g>
 
-  <!-- Panels on the left page. -->
-  <rect x="124" y="196" width="108" height="72" rx="8" fill="#1c2333"/>
-  <rect x="124" y="286" width="48" height="60" rx="7" fill="#c6d0e0"/>
-  <rect x="184" y="286" width="48" height="60" rx="7" fill="#e0835f"/>
+  <!-- Offset print shadow, then the inked speech balloon. -->
+  <path d="M168 118H344A62 62 0 0 1 406 180V276A62 62 0 0 1 344 338H228L118 412L168 338A62 62 0 0 1 106 276V180A62 62 0 0 1 168 118Z" transform="translate(16 16)" fill="#b85032"/>
+  <path d="M168 118H344A62 62 0 0 1 406 180V276A62 62 0 0 1 344 338H228L118 412L168 338A62 62 0 0 1 106 276V180A62 62 0 0 1 168 118Z" fill="#f4f1ea" stroke="#1d1c19" stroke-width="16" stroke-linejoin="round"/>
 
-  <!-- Speech bubble on the right page. -->
-  <path d="M312 214h72a18 18 0 0 1 18 18v34a18 18 0 0 1-18 18h-30l-20 18v-18h-22a18 18 0 0 1-18-18v-34a18 18 0 0 1 18-18z"
-        fill="#f4f1ea"/>
-  <circle cx="330" cy="249" r="5" fill="#20263a"/>
-  <circle cx="348" cy="249" r="5" fill="#20263a"/>
-  <circle cx="366" cy="249" r="5" fill="#20263a"/>
-
-  <!-- Page corner turning up in the accent colour. -->
-  <path d="M416 146c-26-11-55-16-86-14v56c36-2 66 2 86 10z" fill="#e0835f" opacity="0.9"/>
+  <!-- Shouted exclamation mark. -->
+  <rect x="232" y="166" width="48" height="112" rx="24" fill="#1d1c19"/>
+  <circle cx="256" cy="302" r="24" fill="#1d1c19"/>
 </svg>

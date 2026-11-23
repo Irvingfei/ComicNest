@@ -60,7 +60,7 @@ def log(message):
 
 def read_version():
     with open(os.path.join(SOURCE_APP_ROOT, "config.ini"), "r", encoding="utf-8") as handle:
-        return json.load(handle).get("version", "1.0.007")
+        return json.load(handle).get("version", "1.0.008")
 
 
 def force_lf(path):

@@ -1,5 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" rx="16" fill="#1d1c19"/>
-  <path d="M43 23c-2.6-3.2-6.2-5-10.4-5C24.7 18 19 24.3 19 32s5.7 14 13.6 14c4.2 0 7.8-1.8 10.4-5" fill="none" stroke="#f4f1ea" stroke-width="5" stroke-linecap="round"/>
-  <path d="M38 40.5 32 44v-7.5" fill="none" stroke="#e0835f" stroke-width="2.5" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="ComicNest">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b2a26"/>
+      <stop offset="1" stop-color="#161512"/>
+    </linearGradient>
+    <pattern id="halftone" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="7" cy="7" r="4" fill="#e0835f" opacity="0.16"/>
+      <circle cx="22" cy="22" r="4" fill="#e0835f" opacity="0.16"/>
+    </pattern>
+    <clipPath id="tileClip">
+      <rect x="24" y="24" width="464" height="464" rx="112"/>
+    </clipPath>
+  </defs>
+
+  <!-- Rounded tile, with the launcher background left transparent. -->
+  <rect x="24" y="24" width="464" height="464" rx="112" fill="url(#tile)"/>
+  <rect x="24" y="24" width="464" height="464" rx="112" fill="url(#halftone)" clip-path="url(#tileClip)"/>
+  <rect x="26" y="26" width="460" height="460" rx="110" fill="none"
+        stroke="#ffffff" stroke-opacity="0.08" stroke-width="4"/>
+
+  <!-- Pop-art action rays behind the balloon. -->
+  <g stroke="#e0835f" stroke-width="16" stroke-linecap="round">
+    <path d="M412 128 452 92"/>
+    <path d="M418 178h44"/>
+    <path d="M386 92 402 52"/>
+  </g>
+
+  <!-- Offset print shadow, then the inked speech balloon. -->
+  <path d="M168 118H344A62 62 0 0 1 406 180V276A62 62 0 0 1 344 338H228L118 412L168 338A62 62 0 0 1 106 276V180A62 62 0 0 1 168 118Z" transform="translate(16 16)" fill="#b85032"/>
+  <path d="M168 118H344A62 62 0 0 1 406 180V276A62 62 0 0 1 344 338H228L118 412L168 338A62 62 0 0 1 106 276V180A62 62 0 0 1 168 118Z" fill="#f4f1ea" stroke="#1d1c19" stroke-width="16" stroke-linejoin="round"/>
+
+  <!-- Shouted exclamation mark. -->
+  <rect x="232" y="166" width="48" height="112" rx="24" fill="#1d1c19"/>
+  <circle cx="256" cy="302" r="24" fill="#1d1c19"/>
 </svg>

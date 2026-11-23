@@ -9,4 +9,4 @@ _VENDOR_PYTHON = os.path.join(
 if os.path.isdir(_VENDOR_PYTHON) and _VENDOR_PYTHON not in sys.path:
     sys.path.append(_VENDOR_PYTHON)
 
-__version__ = "1.0.007"
+__version__ = "1.0.008"
