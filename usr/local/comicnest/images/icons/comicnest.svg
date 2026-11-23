@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="ComicNest">
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a2925"/>
+      <stop offset="1" stop-color="#171613"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f8f4e9"/>
+      <stop offset="1" stop-color="#e8e1d1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded tile, with the launcher background left transparent. -->
+  <rect x="24" y="24" width="464" height="464" rx="112" fill="url(#tile)"/>
+  <rect x="26" y="26" width="460" height="460" rx="110" fill="none"
+        stroke="#ffffff" stroke-opacity="0.08" stroke-width="4"/>
+
+  <!-- An open comic spread: cream page on the left, ink page on the right. -->
+  <path d="M96 146c42-18 92-18 152 6v230c-60-22-110-22-152-6z" fill="url(#paper)"/>
+  <path d="M416 146c-42-18-92-18-152 6v230c60-22 110-22 152-6z" fill="#20263a"/>
+  <path d="M264 152v230" fill="none" stroke="#0f1015" stroke-width="14" stroke-linecap="round"/>
+
+  <!-- Panels on the left page. -->
+  <rect x="124" y="196" width="108" height="72" rx="8" fill="#1c2333"/>
+  <rect x="124" y="286" width="48" height="60" rx="7" fill="#c6d0e0"/>
+  <rect x="184" y="286" width="48" height="60" rx="7" fill="#e0835f"/>
+
+  <!-- Speech bubble on the right page. -->
+  <path d="M312 214h72a18 18 0 0 1 18 18v34a18 18 0 0 1-18 18h-30l-20 18v-18h-22a18 18 0 0 1-18-18v-34a18 18 0 0 1 18-18z"
+        fill="#f4f1ea"/>
+  <circle cx="330" cy="249" r="5" fill="#20263a"/>
+  <circle cx="348" cy="249" r="5" fill="#20263a"/>
+  <circle cx="366" cy="249" r="5" fill="#20263a"/>
+
+  <!-- Page corner turning up in the accent colour. -->
+  <path d="M416 146c-26-11-55-16-86-14v56c36-2 66 2 86 10z" fill="#e0835f" opacity="0.9"/>
+</svg>

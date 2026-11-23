@@ -1,0 +1,40 @@
+#!/bin/bash
+# postrm - executed after the package has been removed
+set -e
+
+APPID="comicnest"
+ROOT="/usr/local/$APPID"
+
+case "$1" in
+    remove|purge)
+        rm -f "/etc/systemd/system/$APPID.service"
+        systemctl daemon-reload 2>/dev/null || true
+        rm -f "/var/api/$APPID.sock" 2>/dev/null || true
+
+        # Runtime state only: index, covers, cache and logs. Rebuilding the
+        # index costs one scan; the remote cache refills on demand.
+        rm -rf "$ROOT/data" "$ROOT/logs" 2>/dev/null || true
+
+        # The comics are NOT touched, on any argument. They live in the shared
+        # folder /Volume*/comicnest and in folders the operator linked. Those
+        # are the user's files, not runtime state, and TOS provides no tool to
+        # put a share back once it is gone. Deleting a library because an
+        # application was uninstalled would be indefensible.
+        if [ "$1" = "purge" ]; then
+            if id -u "$APPID" >/dev/null 2>&1; then
+                userdel "$APPID" 2>/dev/null || true
+            fi
+            if getent group "$APPID" >/dev/null 2>&1; then
+                groupdel "$APPID" 2>/dev/null || true
+            fi
+        fi
+        ;;
+
+    upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+        ;;
+
+    *)
+        ;;
+esac
+
+exit 0

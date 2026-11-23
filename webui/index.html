@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4f1ea">
+<script>
+  try {
+    var framed = window.self !== window.top;
+    if (framed ||
+        /(^|;\s*)tos_current_username=/.test(document.cookie) ||
+        /^\/v2\/proxy\//.test(location.pathname)) {
+      document.documentElement.dataset.tos = "1";
+    }
+  } catch (e) {
+    document.documentElement.dataset.tos = "1";
+  }
+</script>
+<title>ComicNest</title>
+<link rel="icon" type="image/svg+xml" href="icons/app.svg">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div class="app" id="app">
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#/" aria-label="ComicNest">
+      <span class="brand-name">ComicNest</span>
+    </a>
+    <nav class="nav" data-nav>
+      <a class="nav-link" data-nav-link="library" href="#/"></a>
+      <a class="nav-link" data-nav-link="admin" href="#/admin" hidden></a>
+      <a class="nav-link" data-nav-link="settings" href="#/settings"></a>
+    </nav>
+    <span class="topbar-spacer"></span>
+    <label class="search">
+      <span class="search-icon" data-search-icon aria-hidden="true"></span>
+      <input data-search type="search" autocomplete="off" spellcheck="false" aria-label="Search">
+    </label>
+    <div class="topbar-actions">
+      <button class="icon-btn" type="button" data-admin hidden></button>
+      <button class="icon-btn" type="button" data-theme-toggle></button>
+      <button class="icon-btn" type="button" data-settings></button>
+    </div>
+  </header>
+  <main class="page"><div class="container" id="view"></div></main>
+</div>
+<div id="reader-root" hidden></div>
+<div class="toast-host" id="toasts"></div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

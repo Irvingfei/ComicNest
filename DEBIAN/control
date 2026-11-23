@@ -1,0 +1,14 @@
+Package: comicnest
+Version: 1.0.006
+Architecture: amd64
+Section: utils
+Priority: optional
+Maintainer: TerraMaster Community Developer <dev@example.com>
+Depends: python3 (>= 3.10), systemd
+Installed-Size: 0
+Description: ComicNest - comic and manga reader for TOS
+ Read CBZ, CBR, CB7, ZIP, RAR, TAR, PDF and image folders straight from the
+ NAS. Single, double and split-page layouts, right-to-left or left-to-right
+ reading, continuous vertical scrolling, zoom, brightness and remembered
+ progress. Libraries can point at shared folders or at WebDAV/SMB servers and
+ are read on demand without copying the files first.

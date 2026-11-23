@@ -1,0 +1,45 @@
+#!/bin/bash
+# preinst - executed before the package files are unpacked
+set -e
+
+APPID="comicnest"
+
+# 1. Dedicated system user and group. The service never runs as root.
+if ! getent group "$APPID" >/dev/null 2>&1; then
+    groupadd -r "$APPID" 2>/dev/null || true
+fi
+if ! id -u "$APPID" >/dev/null 2>&1; then
+    useradd -r -g "$APPID" -d "/usr/local/$APPID" -s /usr/sbin/nologin "$APPID" 2>/dev/null \
+        || useradd -r -d "/usr/local/$APPID" -s /bin/false "$APPID" 2>/dev/null || true
+fi
+
+# 2. The library is read from folders the operator chooses. On TOS, read access
+#    to a shared folder is granted per folder through its ACL; membership in
+#    "allusers" only makes the account eligible to be granted access, and the
+#    operator still decides in the control panel. Joining the group here saves
+#    them from having to look the service account up by hand. Best effort: the
+#    group does not exist on every platform build.
+if getent group allusers >/dev/null 2>&1; then
+    usermod -aG allusers "$APPID" 2>/dev/null || true
+fi
+
+# 3. Socket directory. Several TOS applications share /var/api and each one
+#    creates its own socket there, so the directory must stay writable by every
+#    service account while the sticky bit keeps them from replacing each
+#    other's sockets. The socket itself is 0660 and owned by this service.
+mkdir -p /var/api
+chown root:root /var/api 2>/dev/null || true
+chmod 1777 /var/api 2>/dev/null || true
+
+# 4. Runtime data directories. The index, covers and remote cache live here,
+#    outside the shared folder, so the user's File Manager only shows comics.
+mkdir -p "/usr/local/$APPID/data" "/usr/local/$APPID/data/tmp" "/usr/local/$APPID/logs"
+chown -R "$APPID:$APPID" "/usr/local/$APPID/data" "/usr/local/$APPID/logs" 2>/dev/null || true
+chmod 0700 "/usr/local/$APPID/data" "/usr/local/$APPID/logs" 2>/dev/null || true
+
+# 5. Upgrade path: stop the running instance so the new files start cleanly.
+if [ "$1" = "upgrade" ]; then
+    systemctl stop "$APPID.service" 2>/dev/null || true
+fi
+
+exit 0

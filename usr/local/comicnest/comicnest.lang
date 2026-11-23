@@ -1,0 +1,97 @@
+[zh-cn]
+name = "ComicNest"
+auth = "TerraMaster 社区开发者"
+descript = "在 NAS 上直接阅读漫画：支持 CBZ、CBR、CB7、ZIP、RAR、TAR、PDF 与图片文件夹；单页、双页、拆分双页；从右到左、从左到右与连续竖读；缩放、亮度、翻页动画与进度记忆。漫画库可指向共享文件夹，也可挂载 WebDAV、SMB 服务器按需读取，无需先下载。"
+release_note = "1. 首个版本。2. 自动扫描共享文件夹并识别标题、章节与封面。3. 支持 CBZ、CBR、CB7、ZIP、RAR、TAR、PDF 与图片文件夹。4. 单页、双页、拆分双页与连续竖读。5. 从右到左、从左到右阅读方向。6. 平移、卷轴与仿真翻页动画。7. 缩放、亮度与阅读进度记忆。8. 搜索与继续阅读。9. 挂载 WebDAV、SMB 远程漫画库并按需缓存。10. 深色模式与九种界面语言。"
+important = "漫画从共享文件夹或远程来源读取。应用安装时创建共享文件夹 comicnest 作为默认漫画库；若要添加已有文件夹，请为 comicnest 账户授予读取权限。卸载应用不会删除漫画或 comicnest 共享文件夹。"
+
+[zh-hk]
+name = "ComicNest"
+auth = "TerraMaster 社群開發者"
+descript = "在 NAS 上直接閱讀漫畫：支援 CBZ、CBR、CB7、ZIP、RAR、TAR、PDF 與圖片資料夾；單頁、雙頁、拆分雙頁；由右至左、由左至右與連續豎讀；縮放、亮度、翻頁動畫與進度記憶。漫畫庫可指向共享資料夾，也可掛載 WebDAV、SMB 伺服器按需讀取，毋須先下載。"
+release_note = "1. 首個版本。2. 自動掃描共享資料夾並識別標題、章節與封面。3. 支援 CBZ、CBR、CB7、ZIP、RAR、TAR、PDF 與圖片資料夾。4. 單頁、雙頁、拆分雙頁與連續豎讀。5. 由右至左、由左至右閱讀方向。6. 平移、捲軸與仿真翻頁動畫。7. 縮放、亮度與閱讀進度記憶。8. 搜尋與繼續閱讀。9. 掛載 WebDAV、SMB 遠端漫畫庫並按需快取。10. 深色模式與九種介面語言。"
+important = "漫畫從共享資料夾或遠端來源讀取。應用安裝時建立共享資料夾 comicnest 作為預設漫畫庫；若要新增已有資料夾，請為 comicnest 帳戶授予讀取權限。解除安裝不會刪除漫畫或 comicnest 共享資料夾。"
+
+[en-us]
+name = "ComicNest"
+auth = "TerraMaster Community Developer"
+descript = "Read comics and manga straight from the NAS: CBZ, CBR, CB7, ZIP, RAR, TAR, PDF and image folders; single, double and split pages; right-to-left, left-to-right and continuous vertical reading; zoom, brightness, page-turn animations and remembered progress. Libraries can be shared folders or WebDAV/SMB servers read on demand."
+release_note = "1. First release. 2. Automatic scan of shared folders with title, chapter and cover detection. 3. CBZ, CBR, CB7, ZIP, RAR, TAR, PDF and image folders. 4. Single, double, split-page and continuous vertical reading. 5. Right-to-left and left-to-right directions. 6. Slide, scroll and page-flip animations. 7. Zoom, brightness and remembered progress. 8. Search and continue reading. 9. WebDAV and SMB libraries with an on-demand cache. 10. Dark mode and nine interface languages."
+important = "Comics are read from shared folders or added remote sources. The application creates the shared folder comicnest for its own library; adding an existing folder needs read access for the comicnest account. Uninstalling never deletes comics or the comicnest share."
+
+[fr-fr]
+name = "ComicNest"
+auth = "Développeur communautaire TerraMaster"
+descript = "Lisez vos BD et mangas directement depuis le NAS : CBZ, CBR, CB7, ZIP, RAR, TAR, PDF et dossiers d'images ; pages simples, doubles ou divisées ; lecture de droite à gauche, de gauche à droite ou verticale continue ; zoom, luminosité, animations de page et reprise de la lecture. Les bibliothèques peuvent être des dossiers partagés ou des serveurs WebDAV/SMB lus à la demande."
+release_note = "1. Première version. 2. Analyse automatique des dossiers partagés avec détection des titres, chapitres et couvertures. 3. CBZ, CBR, CB7, ZIP, RAR, TAR, PDF et dossiers d'images. 4. Pages simples, doubles, divisées et lecture verticale continue. 5. Sens de lecture de droite à gauche ou de gauche à droite. 6. Animations par glissement, défilement et effet de page. 7. Zoom, luminosité et reprise de la lecture. 8. Recherche et lecture en cours. 9. Bibliothèques WebDAV et SMB avec cache à la demande. 10. Thème sombre et neuf langues d'interface."
+important = "Les BD sont lues dans des dossiers partagés ou des sources distantes. L'application crée le dossier partagé comicnest pour sa bibliothèque ; ajouter un dossier existant demande un accès en lecture au compte comicnest. La désinstallation ne supprime jamais les BD ni le partage comicnest."
+
+[de-de]
+name = "ComicNest"
+auth = "TerraMaster Community-Entwickler"
+descript = "Comics und Manga direkt vom NAS lesen: CBZ, CBR, CB7, ZIP, RAR, TAR, PDF und Bildordner; Einzel-, Doppel- und geteilte Seiten; Leserichtung von rechts nach links, links nach rechts oder fortlaufend vertikal; Zoom, Helligkeit, Umblätteranimationen und gemerkter Lesefortschritt. Bibliotheken können freigegebene Ordner oder WebDAV-/SMB-Server sein, die bei Bedarf gelesen werden."
+release_note = "1. Erste Version. 2. Automatischer Scan freigegebener Ordner mit Erkennung von Titel, Kapitel und Cover. 3. CBZ, CBR, CB7, ZIP, RAR, TAR, PDF und Bildordner. 4. Einzel-, Doppel-, geteilte Seiten und fortlaufend vertikales Lesen. 5. Leserichtung von rechts nach links und links nach rechts. 6. Schiebe-, Scroll- und Umblätteranimationen. 7. Zoom, Helligkeit und gemerkter Fortschritt. 8. Suche und Weiterlesen. 9. WebDAV- und SMB-Bibliotheken mit Cache auf Abruf. 10. Dunkler Modus und neun Oberflächensprachen."
+important = "Comics werden aus freigegebenen Ordnern oder hinzugefügten Remote-Quellen gelesen. Die Anwendung legt den Freigabeordner comicnest für ihre Bibliothek an; zum Hinzufügen eines vorhandenen Ordners braucht das Konto comicnest Lesezugriff. Beim Deinstallieren werden weder Comics noch die Freigabe comicnest gelöscht."
+
+[it-it]
+name = "ComicNest"
+auth = "Sviluppatore della community TerraMaster"
+descript = "Leggi fumetti e manga direttamente dal NAS: CBZ, CBR, CB7, ZIP, RAR, TAR, PDF e cartelle di immagini; pagine singole, doppie o divise; lettura da destra a sinistra, da sinistra a destra o verticale continua; zoom, luminosità, animazioni di pagina e ripresa della lettura. Le librerie possono essere cartelle condivise o server WebDAV/SMB letti su richiesta."
+release_note = "1. Prima versione. 2. Scansione automatica delle cartelle condivise con rilevamento di titoli, capitoli e copertine. 3. CBZ, CBR, CB7, ZIP, RAR, TAR, PDF e cartelle di immagini. 4. Pagine singole, doppie, divise e lettura verticale continua. 5. Lettura da destra a sinistra e da sinistra a destra. 6. Animazioni a scorrimento, scorrimento continuo e sfoglia pagina. 7. Zoom, luminosità e ripresa della lettura. 8. Ricerca e continua a leggere. 9. Librerie WebDAV e SMB con cache su richiesta. 10. Tema scuro e nove lingue dell'interfaccia."
+important = "I fumetti vengono letti da cartelle condivise o da sorgenti remote. L'applicazione crea la cartella condivisa comicnest per la propria libreria; per aggiungere una cartella esistente serve l'accesso in lettura all'account comicnest. La disinstallazione non elimina mai i fumetti né la condivisione comicnest."
+
+[es-es]
+name = "ComicNest"
+auth = "Desarrollador de la comunidad TerraMaster"
+descript = "Lee cómics y manga directamente desde el NAS: CBZ, CBR, CB7, ZIP, RAR, TAR, PDF y carpetas de imágenes; páginas simples, dobles o divididas; lectura de derecha a izquierda, de izquierda a derecha o vertical continua; zoom, brillo, animaciones de página y progreso recordado. Las bibliotecas pueden ser carpetas compartidas o servidores WebDAV/SMB leídos bajo demanda."
+release_note = "1. Primera versión. 2. Escaneo automático de carpetas compartidas con detección de títulos, capítulos y portadas. 3. CBZ, CBR, CB7, ZIP, RAR, TAR, PDF y carpetas de imágenes. 4. Páginas simples, dobles, divididas y lectura vertical continua. 5. Lectura de derecha a izquierda y de izquierda a derecha. 6. Animaciones de deslizamiento, desplazamiento y vuelta de página. 7. Zoom, brillo y progreso recordado. 8. Búsqueda y continuar leyendo. 9. Bibliotecas WebDAV y SMB con caché bajo demanda. 10. Tema oscuro y nueve idiomas de interfaz."
+important = "Los cómics se leen desde carpetas compartidas o fuentes remotas. La aplicación crea la carpeta compartida comicnest para su biblioteca; añadir una carpeta existente requiere permiso de lectura para la cuenta comicnest. Desinstalar nunca elimina los cómics ni el recurso compartido comicnest."
+
+[hu-hu]
+name = "ComicNest"
+auth = "TerraMaster közösségi fejlesztő"
+descript = "Olvasson képregényeket és mangákat közvetlenül a NAS-ról: CBZ, CBR, CB7, ZIP, RAR, TAR, PDF és képkönyvtárak; egy-, dupla- és osztott oldalak; jobbról balra, balról jobbra vagy folyamatos függőleges olvasás; nagyítás, fényerő, lapfordítási animációk és megjegyzett haladás. A könyvtárak lehetnek megosztott mappák vagy igény szerint olvasott WebDAV/SMB-kiszolgálók."
+release_note = "1. Első kiadás. 2. Megosztott mappák automatikus vizsgálata címmel, fejezettel és borítóval. 3. CBZ, CBR, CB7, ZIP, RAR, TAR, PDF és képkönyvtárak. 4. Egy-, dupla-, osztott oldalas és folyamatos függőleges olvasás. 5. Jobbról balra és balról jobbra olvasás. 6. Csúsztató, görgető és lapfordító animációk. 7. Nagyítás, fényerő és megjegyzett haladás. 8. Keresés és olvasás folytatása. 9. WebDAV- és SMB-könyvtárak igény szerinti gyorsítótárral. 10. Sötét mód és kilenc felületi nyelv."
+important = "A képregények megosztott mappákból vagy hozzáadott távoli forrásokból olvashatók. Az alkalmazás létrehozza a comicnest megosztott mappát a saját könyvtárához; meglévő mappa hozzáadásához a comicnest fióknak olvasási jog kell. Az eltávolítás soha nem törli a képregényeket vagy a comicnest megosztást."
+
+[ja-jp]
+name = "ComicNest"
+auth = "TerraMaster コミュニティ開発者"
+descript = "NAS から直接コミックやマンガを読めます。CBZ、CBR、CB7、ZIP、RAR、TAR、PDF、画像フォルダーに対応。単ページ、見開き、分割見開き、右から左・左から右・連続縦読み、ズーム、明るさ、ページめくりアニメーション、読書位置の記憶。ライブラリは共有フォルダーでも、WebDAV/SMB サーバーを必要な分だけ読み込む形でも使えます。"
+release_note = "1. 初回リリース。2. 共有フォルダーを自動スキャンし、タイトル・章・表紙を認識。3. CBZ、CBR、CB7、ZIP、RAR、TAR、PDF、画像フォルダーに対応。4. 単ページ・見開き・分割見開き・連続縦読み。5. 右から左、左から右の読書方向。6. スライド・スクロール・ページめくりアニメーション。7. ズーム、明るさ、読書位置の記憶。8. 検索と続きから読む。9. WebDAV/SMB ライブラリとオンデマンドキャッシュ。10. ダークモードと 9 言語のインターフェース。"
+important = "コミックは共有フォルダーまたは追加したリモートソースから読み込みます。アプリは自身のライブラリ用に共有フォルダー comicnest を作成します。既存フォルダーを追加するには comicnest アカウントの読み取り権限が必要です。アンインストールしてもコミックや comicnest 共有は削除されません。"
+
+[ko-kr]
+name = "ComicNest"
+auth = "TerraMaster 커뮤니티 개발자"
+descript = "NAS에서 바로 만화를 읽으세요. CBZ, CBR, CB7, ZIP, RAR, TAR, PDF 및 이미지 폴더를 지원합니다. 단일, 양면, 분할 양면 보기; 오른쪽에서 왼쪽, 왼쪽에서 오른쪽, 연속 세로 읽기; 확대, 밝기, 페이지 넘김 애니메이션, 읽기 위치 기억. 라이브러리는 공유 폴더 또는 필요할 때 읽는 WebDAV/SMB 서버일 수 있습니다."
+release_note = "1. 첫 릴리스. 2. 공유 폴더 자동 검색과 제목, 장, 표지 인식. 3. CBZ, CBR, CB7, ZIP, RAR, TAR, PDF, 이미지 폴더. 4. 단일, 양면, 분할 양면, 연속 세로 읽기. 5. 오른쪽에서 왼쪽, 왼쪽에서 오른쪽 읽기 방향. 6. 슬라이드, 스크롤, 페이지 넘김 애니메이션. 7. 확대, 밝기, 읽기 위치 기억. 8. 검색과 이어 읽기. 9. WebDAV/SMB 라이브러리와 필요 시 캐시. 10. 다크 모드와 9개 인터페이스 언어."
+important = "만화는 공유 폴더 또는 추가한 원격 소스에서 읽습니다. 앱은 자체 라이브러리용 공유 폴더 comicnest를 만듭니다. 기존 폴더를 추가하려면 comicnest 계정에 읽기 권한이 필요합니다. 제거해도 만화나 comicnest 공유는 삭제되지 않습니다."
+
+[pl-pl]
+name = "ComicNest"
+auth = "Społecznościowy deweloper TerraMaster"
+descript = "Czytaj komiksy i mangę bezpośrednio z NAS: CBZ, CBR, CB7, ZIP, RAR, TAR, PDF i foldery obrazów; strony pojedyncze, podwójne i dzielone; czytanie od prawej do lewej, od lewej do prawej lub pionowo w trybie ciągłym; powiększenie, jasność, animacje przewracania i zapamiętany postęp. Biblioteki mogą być folderami udostępnionymi lub serwerami WebDAV/SMB czytanymi na żądanie."
+release_note = "1. Pierwsze wydanie. 2. Automatyczne skanowanie folderów udostępnionych z rozpoznawaniem tytułów, rozdziałów i okładek. 3. CBZ, CBR, CB7, ZIP, RAR, TAR, PDF i foldery obrazów. 4. Strony pojedyncze, podwójne, dzielone i ciągłe czytanie pionowe. 5. Kierunek od prawej do lewej i od lewej do prawej. 6. Animacje przesuwania, przewijania i przewracania. 7. Powiększenie, jasność i zapamiętany postęp. 8. Wyszukiwanie i kontynuowanie czytania. 9. Biblioteki WebDAV i SMB z pamięcią podręczną na żądanie. 10. Tryb ciemny i dziewięć języków interfejsu."
+important = "Komiksy są czytane z folderów udostępnionych lub dodanych źródeł zdalnych. Aplikacja tworzy folder udostępniony comicnest dla własnej biblioteki; dodanie istniejącego folderu wymaga prawa odczytu dla konta comicnest. Odinstalowanie nigdy nie usuwa komiksów ani udziału comicnest."
+
+[ru-ru]
+name = "ComicNest"
+auth = "Разработчик сообщества TerraMaster"
+descript = "Читайте комиксы и мангу прямо с NAS: CBZ, CBR, CB7, ZIP, RAR, TAR, PDF и папки с изображениями; одиночные, развороты и разделённые страницы; чтение справа налево, слева направо или непрерывное вертикальное; масштаб, яркость, анимация перелистывания и запоминание прогресса. Библиотеки могут быть общими папками или серверами WebDAV/SMB с чтением по запросу."
+release_note = "1. Первый выпуск. 2. Автоматическое сканирование общих папок с определением названий, глав и обложек. 3. CBZ, CBR, CB7, ZIP, RAR, TAR, PDF и папки с изображениями. 4. Одиночные, развороты, разделённые страницы и непрерывное вертикальное чтение. 5. Направление справа налево и слева направо. 6. Анимации сдвига, прокрутки и перелистывания. 7. Масштаб, яркость и запоминание прогресса. 8. Поиск и продолжение чтения. 9. Библиотеки WebDAV и SMB с кешем по требованию. 10. Тёмная тема и девять языков интерфейса."
+important = "Комиксы читаются из общих папок или добавленных удалённых источников. Приложение создаёт общую папку comicnest для своей библиотеки; для добавления существующей папки учётной записи comicnest нужно право на чтение. Удаление приложения никогда не удаляет комиксы или общий ресурс comicnest."
+
+[tr-tr]
+name = "ComicNest"
+auth = "TerraMaster topluluk geliştiricisi"
+descript = "Çizgi romanları ve mangaları doğrudan NAS'tan okuyun: CBZ, CBR, CB7, ZIP, RAR, TAR, PDF ve görsel klasörleri; tek, çift ve bölünmüş sayfalar; sağdan sola, soldan sağa veya sürekli dikey okuma; yakınlaştırma, parlaklık, sayfa çevirme animasyonları ve okuma konumu hatırlama. Kitaplıklar paylaşılan klasörler veya isteğe bağlı okunan WebDAV/SMB sunucuları olabilir."
+release_note = "1. İlk sürüm. 2. Paylaşılan klasörlerin otomatik taranması ve başlık, bölüm, kapak algılama. 3. CBZ, CBR, CB7, ZIP, RAR, TAR, PDF ve görsel klasörleri. 4. Tek, çift, bölünmüş sayfa ve sürekli dikey okuma. 5. Sağdan sola ve soldan sağa okuma yönleri. 6. Kaydırma, ilerletme ve sayfa çevirme animasyonları. 7. Yakınlaştırma, parlaklık ve okuma konumu hatırlama. 8. Arama ve okumaya devam etme. 9. İsteğe bağlı önbellekli WebDAV ve SMB kitaplıkları. 10. Koyu tema ve dokuz arayüz dili."
+important = "Çizgi romanlar paylaşılan klasörlerden veya eklenen uzak kaynaklardan okunur. Uygulama kendi kitaplığı için comicnest paylaşılan klasörünü oluşturur; mevcut bir klasörü eklemek için comicnest hesabına okuma izni gerekir. Kaldırma işlemi çizgi romanları veya comicnest paylaşımını asla silmez."
+
+[pt-pt]
+name = "ComicNest"
+auth = "Programador da comunidade TerraMaster"
+descript = "Leia banda desenhada e manga diretamente do NAS: CBZ, CBR, CB7, ZIP, RAR, TAR, PDF e pastas de imagens; páginas simples, duplas ou divididas; leitura da direita para a esquerda, da esquerda para a direita ou vertical contínua; zoom, brilho, animações de mudança de página e progresso memorizado. As bibliotecas podem ser pastas partilhadas ou servidores WebDAV/SMB lidos a pedido."
+release_note = "1. Primeira versão. 2. Análise automática de pastas partilhadas com deteção de títulos, capítulos e capas. 3. CBZ, CBR, CB7, ZIP, RAR, TAR, PDF e pastas de imagens. 4. Páginas simples, duplas, divididas e leitura vertical contínua. 5. Leitura da direita para a esquerda e da esquerda para a direita. 6. Animações de deslizar, deslocar e virar página. 7. Zoom, brilho e progresso memorizado. 8. Pesquisa e continuar a ler. 9. Bibliotecas WebDAV e SMB com cache a pedido. 10. Tema escuro e nove idiomas de interface."
+important = "A banda desenhada é lida de pastas partilhadas ou de fontes remotas adicionadas. A aplicação cria a pasta partilhada comicnest para a sua biblioteca; adicionar uma pasta existente exige acesso de leitura para a conta comicnest. A desinstalação nunca elimina a banda desenhada nem a partilha comicnest."

@@ -1,0 +1,35 @@
+[Unit]
+Description=ComicNest for TOS
+Documentation=https://www.terramaster.com
+After=network.target
+
+# A short start-limit window turns a transient failure into a permanently
+# failed unit, which the TOS app framework reports as "the app disabled
+# itself". Keep a generous window so recoverable errors can retry.
+StartLimitBurst=10
+StartLimitIntervalSec=120
+
+[Service]
+Type=simple
+User=comicnest
+Group=comicnest
+WorkingDirectory=/usr/local/comicnest
+ExecStart=/usr/local/comicnest/bin/comicnest-server
+EnvironmentFile=-/usr/local/comicnest/comicnest.env
+TimeoutStartSec=30
+TimeoutStopSec=10
+
+# Hardening is deliberately limited to directives that do NOT require systemd
+# to build a mount namespace. On TOS, /var and several standard paths are
+# symlinks into /tmp; namespace based options (PrivateTmp, ProtectSystem,
+# ProtectHome, ReadWritePaths) make systemd fail while preparing the unit root
+# and the service exits with status=226/NAMESPACE before the program starts.
+# Isolation comes from the unprivileged account and filesystem ownership.
+NoNewPrivileges=true
+
+Restart=on-failure
+RestartSec=5
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,110 @@
+#!/bin/bash
+# postinst - executed after the package files have been unpacked
+set -e
+
+APPID="comicnest"
+ROOT="/usr/local/$APPID"
+SERVICE="$APPID.service"
+SHARE="$APPID"
+
+case "$1" in
+    configure)
+        # 1. Normalise ownership and modes. A build produced on Windows cannot
+        #    record POSIX modes, so the installed tree is fixed up here rather
+        #    than trusting the archive: directories 0755, files readable, the
+        #    private data and logs trees tightened below.
+        chown -R "$APPID:$APPID" "$ROOT" 2>/dev/null || true
+        chmod -R u=rwX,go=rX "$ROOT" 2>/dev/null || true
+        chmod 0755 "$ROOT/bin/comicnest-server" 2>/dev/null || true
+        chmod 0755 "$ROOT/vendor/7zip/7zz" 2>/dev/null || true
+        mkdir -p "$ROOT/data" "$ROOT/data/tmp" "$ROOT/data/cache" "$ROOT/data/covers" "$ROOT/logs"
+        chown -R "$APPID:$APPID" "$ROOT/data" "$ROOT/logs" 2>/dev/null || true
+        chmod 0700 "$ROOT/data" "$ROOT/logs" 2>/dev/null || true
+        chmod 0750 "$ROOT/data/tmp" 2>/dev/null || true
+
+        # 2. Drop stale bytecode. The build pins source mtimes for reproducible
+        #    archives, so a .pyc left over from a hand-run diagnostic can look
+        #    valid against the newly unpacked source and the old code keeps
+        #    running. $ROOT may be a symlink into the volume, hence realpath.
+        REAL_ROOT="$(readlink -f "$ROOT" 2>/dev/null || echo "$ROOT")"
+        find "$REAL_ROOT" -name '__pycache__' -type d -prune -exec rm -rf {} + 2>/dev/null || true
+
+        # 3. Socket directory shared by all TOS applications.
+        mkdir -p /var/api
+        chown root:root /var/api 2>/dev/null || true
+        chmod 1777 /var/api 2>/dev/null || true
+        rm -f "/var/api/$APPID.sock" 2>/dev/null || true
+
+        # 4. Create the application's own shared folder. Comics stay ordinary
+        #    files in a normal TOS share, so the operator sees them in the File
+        #    Manager, reaches them over SMB, and snapshots keep history.
+        #    ter_share_add is the platform tool that creates such a folder and
+        #    the only sanctioned way to obtain one the service account can use.
+        #    Failure is not fatal: the service still starts and reports the
+        #    library as unavailable.
+        VOLUME="$(ls -d /Volume* 2>/dev/null | head -1)"
+        SHARE_ROOT=""
+        [ -n "$VOLUME" ] && SHARE_ROOT="$VOLUME/$SHARE"
+
+        READY=0
+        [ -d "$SHARE_ROOT" ] && READY=1
+        if [ "$READY" = "0" ] && [ -n "$VOLUME" ] && command -v ter_share_add >/dev/null 2>&1; then
+            ter_share_add -device "$(basename "$VOLUME")" -name "$SHARE" -owner "$APPID" >/dev/null 2>&1 || true
+            [ -d "$SHARE_ROOT" ] && READY=1
+        fi
+
+        if [ "$READY" = "1" ]; then
+            echo "comic library: $SHARE_ROOT/library"
+            mkdir -p "$SHARE_ROOT/library" 2>/dev/null || true
+            chown -R "$APPID:$APPID" "$SHARE_ROOT/library" 2>/dev/null || true
+        else
+            echo "WARNING: the comic shared folder '$SHARE' could not be created."
+            echo "         The application will start; an administrator can link folders."
+        fi
+
+        # 5. Make a hand-installed package self-sufficient. The platform unpacks
+        #    webui.bz2 and links /usr/www/<appid> itself; a plain dpkg -i does
+        #    neither, and the result answers /health while serving 404 for its
+        #    own page. Both steps are idempotent.
+        if [ -f "$ROOT/webui.bz2" ]; then
+            mkdir -p "$ROOT/webui"
+            tar -xjf "$ROOT/webui.bz2" -C "$ROOT/webui" 2>/dev/null || true
+        fi
+        if [ -d "$ROOT/webui" ]; then
+            chown -R root:root "$ROOT/webui" 2>/dev/null || true
+            chmod -R a+rX "$ROOT/webui" 2>/dev/null || true
+        fi
+        if [ ! -e "/usr/www/$APPID" ]; then
+            ln -s "$ROOT/webui" "/usr/www/$APPID" 2>/dev/null || true
+        fi
+
+        # 6. Install and register the systemd unit.
+        if [ -f "$ROOT/init.d/$SERVICE" ]; then
+            cp -f "$ROOT/init.d/$SERVICE" "/etc/systemd/system/$SERVICE"
+            chmod 0644 "/etc/systemd/system/$SERVICE"
+            systemctl daemon-reload 2>/dev/null || true
+            systemctl enable "$SERVICE" 2>/dev/null || true
+        fi
+
+        # 7. Bring the service up. try-restart covers an upgrade; the explicit
+        #    start covers a fresh install and an upgrade performed while the
+        #    unit happened to be stopped. The end state is asserted.
+        if [ -n "$2" ]; then
+            echo "Upgrading comicnest from version $2 to ${3:-1.0.006}"
+            systemctl try-restart "$SERVICE" 2>/dev/null || true
+        fi
+        if ! systemctl is-active --quiet "$SERVICE" 2>/dev/null; then
+            systemctl start "$SERVICE" 2>/dev/null || true
+        fi
+        ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+        ;;
+
+    *)
+        echo "postinst called with unknown argument '$1'" >&2
+        exit 1
+        ;;
+esac
+
+exit 0
